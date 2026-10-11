@@ -5,10 +5,16 @@
   "description": "description.md",
   "date": "2026-01-01",
   "tags": [],
-  "links": {
-    "live": "",
-    "repo": ""
-  },
+  "links": [
+    {
+      "label": "Play",
+      "url": ""
+    },
+    {
+      "label": "Source code",
+      "url": ""
+    }
+  ],
   "thumbnail": "images/thumbnail.png",
   "images": []
 }

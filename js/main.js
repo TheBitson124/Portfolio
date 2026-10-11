@@ -24,8 +24,13 @@ async function loadSlugs() {
   return list.projects;
 }
 
+// Folder names may contain spaces or symbols, so encode them for URLs.
+function projectPath(slug) {
+  return `projects/${encodeURIComponent(slug)}/`;
+}
+
 async function loadProject(slug) {
-  const project = await fetchJson(`projects/${slug}/project.json`);
+  const project = await fetchJson(projectPath(slug) + 'project.json');
   return { ...project, slug };
 }
 
@@ -95,7 +100,7 @@ async function initProject() {
 
   try {
     const project = await loadProject(slug);
-    const base = `projects/${slug}/`;
+    const base = projectPath(slug);
     document.title = `${project.title} · Portfolio`;
 
     if (SECTIONS[project.status]) {
@@ -113,8 +118,14 @@ async function initProject() {
     container.append(meta);
 
     const links = el('div', 'project-links');
-    if (project.links?.live) links.append(Object.assign(el('a', 'btn', 'Live'), { href: project.links.live }));
-    if (project.links?.repo) links.append(Object.assign(el('a', 'btn', 'Source'), { href: project.links.repo }));
+    for (const link of project.links || []) {
+      if (!link.url) continue;
+      const a = el('a', 'btn', link.label || link.url);
+      a.href = link.url;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      links.append(a);
+    }
     if (links.children.length) container.append(links);
 
     if (project.description) {
