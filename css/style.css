@@ -177,7 +177,7 @@ a.btn {
   gap: 12px;
 }
 
-.project-btn {
+a.project-btn {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -236,7 +236,7 @@ a.btn {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
   gap: 16px;
   margin-top: 32px;
 }
@@ -245,4 +245,90 @@ a.btn {
   width: 100%;
   border-radius: 8px;
   border: 1px solid var(--border);
+}
+
+/* Keep long content inside the screen */
+.project-description {
+  overflow-wrap: anywhere;
+}
+
+.project-description img {
+  max-width: 100%;
+  height: auto;
+}
+
+.project-description pre {
+  overflow-x: auto;
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 700px) {
+  main {
+    padding: 0 16px 48px;
+  }
+
+  /* Stack photo above the name instead of side by side */
+  .hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px;
+    padding: 32px 16px 16px;
+  }
+
+  .hero-spacer {
+    display: none;
+  }
+
+  .hero-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .hero-name {
+    font-size: 2.25rem;
+  }
+
+  .hero-title {
+    font-size: 1rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+
+  .subsections {
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .subsections .btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 12px 8px;
+    text-align: center;
+  }
+
+  .btn-big {
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 18px 16px;
+  }
+
+  .topbar {
+    padding: 16px;
+  }
+
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  .project-btn {
+    padding: 14px 16px;
+  }
+
+  .project-links .btn {
+    flex: 1;
+    text-align: center;
+  }
 }
