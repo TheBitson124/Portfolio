@@ -1,5 +1,7 @@
 {
   "title": "Project Title",
+  "status": "published",
+  "_status_options": "published | developing | abandoned",
   "summary": "One-sentence description of the project.",
   "description": "description.md",
   "date": "2026-01-01",

@@ -6,7 +6,7 @@
   <title>Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="home">
   <header class="hero">
     <div class="hero-photo">
       <img src="assets/images/profile.jpg" alt="Photo of Your Name" onerror="this.remove()">
@@ -30,20 +30,16 @@
     </section>
 
     <nav class="subsections">
-      <!-- Subsection buttons: to be decided -->
-      <button class="btn" type="button">Section 1</button>
-      <button class="btn" type="button">Section 2</button>
-      <button class="btn" type="button">Section 3</button>
+      <a class="btn" href="section.html?s=published">Published</a>
+      <a class="btn" href="section.html?s=developing">Developing</a>
+      <a class="btn" href="section.html?s=abandoned">Abandoned</a>
     </nav>
 
     <div class="randomize-wrap">
       <button id="randomize" class="btn btn-big" type="button">Randomize</button>
     </div>
-
-    <section id="projects"></section>
   </main>
 
-  <footer></footer>
   <script src="js/main.js"></script>
 </body>
 </html>
