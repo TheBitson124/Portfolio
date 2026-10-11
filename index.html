@@ -7,12 +7,42 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Portfolio</h1>
+  <header class="hero">
+    <div class="hero-photo">
+      <img src="assets/images/profile.jpg" alt="Photo of Your Name" onerror="this.remove()">
+    </div>
+
+    <div class="hero-text">
+      <h1 class="hero-name">Your Name</h1>
+      <p class="hero-title">Your Title</p>
+      <p class="hero-catchphrase">"Your catchphrase goes here."</p>
+    </div>
+
+    <div class="hero-spacer"></div>
   </header>
+
   <main>
+    <section class="intro">
+      <p>
+        A short description about you and the kind of work you do. Two or three
+        sentences is enough here.
+      </p>
+    </section>
+
+    <nav class="subsections">
+      <!-- Subsection buttons: to be decided -->
+      <button class="btn" type="button">Section 1</button>
+      <button class="btn" type="button">Section 2</button>
+      <button class="btn" type="button">Section 3</button>
+    </nav>
+
+    <div class="randomize-wrap">
+      <button id="randomize" class="btn btn-big" type="button">Randomize</button>
+    </div>
+
     <section id="projects"></section>
   </main>
+
   <footer></footer>
   <script src="js/main.js"></script>
 </body>

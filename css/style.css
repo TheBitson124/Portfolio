@@ -1,6 +1,15 @@
 :root {
-  --bg: #ffffff;
-  --text: #1a1a1a;
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --border: #2c2c2c;
+  --text: #f2f2f2;
+  --text-muted: #b5b5b5;
+  --accent: #e0303a;
+  --accent-hover: #ff4550;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -8,4 +17,121 @@ body {
   font-family: system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
+  line-height: 1.5;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 32px 64px;
+}
+
+/* Hero: photo top-left, name/title/catchphrase centered */
+.hero {
+  display: grid;
+  grid-template-columns: 160px 1fr 160px;
+  align-items: center;
+  gap: 32px;
+  padding: 40px 48px 24px;
+}
+
+.hero-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface);
+  border: 3px solid var(--accent);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  text-align: center;
+}
+
+.hero-name {
+  margin: 0;
+  font-size: 3rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-title {
+  margin: 4px 0 0;
+  font-size: 1.25rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.hero-catchphrase {
+  margin: 12px 0 0;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* Short description */
+.intro {
+  max-width: 680px;
+  margin: 16px auto 40px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn {
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.subsections {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.randomize-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 56px;
+}
+
+.btn-big {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 20px 72px;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn-big:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff;
 }
